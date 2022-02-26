@@ -71,6 +71,12 @@ bool Menu::checkButtonPlayClick(AssertManager& manager)
 		this->getButtonPlaySprite()->setTextureRect(sf::IntRect(222, 0, 222, 110));
 		return false; 
 	}
-	else if (previousFrameClick) { manager.getSoundButtonClick()->play(); this->menuStateIsOpen = false; this->previousFrameClick = false; return true; }
+	else if (previousFrameClick) { 
+		manager.getSoundButtonClick()->play(); 
+		this->menuStateIsOpen = false; 
+		this->previousFrameClick = false;  
+		manager.getTitleScreenMusic()->stop();
+		manager.getBackgroundMusic()->play();
+		return true; }
 	return false;
 }

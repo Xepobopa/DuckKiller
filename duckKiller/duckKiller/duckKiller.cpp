@@ -12,15 +12,16 @@ int main()
 {
 	RenderWindow win(VideoMode(1920, 1080), "DuckKiller", Style::Fullscreen);
 	win.setVerticalSyncEnabled(true);
-	win.setMouseCursorVisible(false);
+	//win.setMouseCursorVisible(false);
 
 
 #pragma region Create all needed stuff
 	// load all needed textures at once
 	AssertManager am;
 
+	Cursor cursor;
 	// create cursor
-	User_Cursor cursour(win, am);
+	User_Cursor cursour(win, am, cursor);
 	
 	// create menu
 	Menu* menu = new Menu(am);
@@ -40,19 +41,22 @@ int main()
 			// close window by pressing button
 			if (menu->checkButtonQuitClick()) { win.close(); }
 			// start game
-			if (menu->checkButtonPlayClick(am)) { std::cout << "Play"; }
+			if (menu->checkButtonPlayClick(am)) { std::cout << "Play\n"; }
 
 			menu->printAllSprites(win);
 		}
 #pragma endregion
 
 
+
+
 #pragma region Draw Game
-		if (!menu->menuStateIsOpen){ 
+		if (!menu->menuStateIsOpen){ // if button play was clicked
 			win.draw(*game->getBackgroundSprite());
-			win.draw(*game->getBulletCounter());
+			game->drawBulletCounters(win);
+			game->checkMouseClickToShoot(am);
 		}
-		win.draw(*cursour.getGameCursor()); // draw at the end
+		//win.draw(*cursour.getGameCursor()); // draw at the end
 		win.display();
 #pragma endregion
 	}

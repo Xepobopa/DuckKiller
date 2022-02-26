@@ -9,16 +9,20 @@ private:
 	sf::Texture* textureDuckRed;
 	sf::Texture* textureDuckDark;
 	sf::Texture* textureDog;
-	sf::Texture* textureBullet;
 	sf::Texture* textureMenuButtons;
 	sf::Texture* textureBackground;
-	sf::Texture* textureCursorAim;
+	sf::Image* textureCursorAim;
 	sf::Texture* textureMenuBackground;
 	sf::Texture* textureMenuGameName;
-	sf::Texture* textureBulletCounter;
+	sf::Texture* textureBulletCounterFull;
+	sf::Texture* textureBulletCounterOneBullet;
+	sf::Texture* textureBulletCounterTwoBullets;
+	sf::Texture* textureBulletCounterEmpty;
 	sf::SoundBuffer* buffer;
 	sf::Sound* soundButtonClick;
+	sf::Sound* soundShoot;
 	sf::Music* titleScreenMusic;
+	sf::Music* backgroundMusic;
 public:
 	AssertManager();
 
@@ -27,14 +31,20 @@ public:
 	sf::Texture* getTextureDuckRed();
 	sf::Texture* getTextureDuckDark();
 	sf::Texture* getTextureDog();
-	sf::Texture* getTextureBullet();
 	sf::Texture* getTextureMenuButtons();
-	sf::Texture* getTextureAim();
+	sf::Image* getTextureAim();
 	sf::Texture* getTextureBackground();
 	sf::Texture* getTextureMenuBackground();
 	sf::Texture* getTextureMenuGameName();
-	sf::Texture* getTextureBulletCounter();
+	sf::Texture* getTextureBulletCounterFull();
+	sf::Texture* getTextureBulletCounterOneBullet();
+	sf::Texture* getTextureBulletCounterTwoBullet();
+	sf::Texture* getTextureBulletCounterEmpty();
 	sf::Sound* getSoundButtonClick();
 	sf::Music* getTitleScreenMusic();
+	sf::Music* getBackgroundMusic();
+
+	//set path to the needed sound
+	sf::Sound* getSoundShoot(std::string path);
 };
 
