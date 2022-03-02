@@ -58,7 +58,7 @@ void Game::setBullets(int bullets)
 		this->bulletCounterFull->setColor(sf::Color(255, 255, 255, 255)); // set visible
 		break;
 	default:
-		assert(true, "You can set only digits from 0 to 3\n");
+		assert("You can set only digits from 0 to 3\n");
 		break;
 	}
 }
@@ -73,11 +73,14 @@ void Game::drawBulletCounters(sf::RenderWindow& win)
 
 bool Game::checkMouseClickToShoot(AssertManager& manager)
 {
-	if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { this->previous_frame_click = true; return false; }
-	else if (previous_frame_click) {
-		manager.getSoundShoot("sound//gunshot.wav")->play();
-		this->setBullets(bullet_counter -= 1);
-		this->previous_frame_click = false;
-		return true;
+	if (bullet_counter) {
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) { this->previous_frame_click = true; return false; }
+		else if (previous_frame_click) {
+			manager.getSoundShoot()->play();
+			this->setBullets(bullet_counter -= 1);
+			this->previous_frame_click = false;
+			return true;
+		}
 	}
+	return false;
 }

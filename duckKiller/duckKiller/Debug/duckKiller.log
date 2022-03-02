@@ -1,4 +1,51 @@
-﻿  Cursor.cpp
+﻿  DuckBlue.cpp
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(7,51): warning C4244: аргумент: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(28,90): warning C4244: аргумент: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(28,84): warning C4244: аргумент: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(28,76): warning C4244: аргумент: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(28,55): warning C4244: аргумент: преобразование "double" в "T", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(36,25): warning C4244: +=: преобразование "float" в "int", возможна потеря данных
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(115,49): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(115,34): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(117,50): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\DuckBlue.cpp(117,35): warning C4244: аргумент: преобразование "int" в "T", возможна потеря данных
+          with
+          [
+              T=float
+          ]
   duckKiller.cpp
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\duckKiller.cpp(16,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
   Создание кода...
   duckKiller.vcxproj -> C:\Users\User\Desktop\DuckKiller\duckKiller\Debug\duckKiller.exe

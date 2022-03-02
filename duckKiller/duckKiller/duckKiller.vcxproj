@@ -153,15 +153,23 @@
   <ItemGroup>
     <ClCompile Include="AssertManager.cpp" />
     <ClCompile Include="Cursor.cpp" />
+    <ClCompile Include="DuckBlue.cpp" />
     <ClCompile Include="duckKiller.cpp" />
+    <ClCompile Include="Ducks.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Menu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AssertManager.h" />
     <ClInclude Include="Cursor.h" />
+    <ClInclude Include="DuckBlue.h" />
+    <ClInclude Include="Ducks.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="duckKiller.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

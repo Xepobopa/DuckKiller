@@ -21,6 +21,10 @@ private:
 	sf::SoundBuffer* buffer;
 	sf::Sound* soundButtonClick;
 	sf::Sound* soundShoot;
+	sf::Sound* soundQuack;
+	sf::Sound* soundDeadDuckFalls;
+	sf::Sound* soundDeadDuckLands;
+	sf::Sound* soundDuckFlapping;
 	sf::Music* titleScreenMusic;
 	sf::Music* backgroundMusic;
 public:
@@ -41,10 +45,12 @@ public:
 	sf::Texture* getTextureBulletCounterTwoBullet();
 	sf::Texture* getTextureBulletCounterEmpty();
 	sf::Sound* getSoundButtonClick();
+	sf::Sound* getSoundQuack();
+	sf::Sound* getSoundShoot();
+	sf::Sound* getSoundDeadDuckFalls();
+	sf::Sound* getSoundDeadDuckLands();
+	sf::Sound* getSoundDuckFlapping();
 	sf::Music* getTitleScreenMusic();
 	sf::Music* getBackgroundMusic();
-
-	//set path to the needed sound
-	sf::Sound* getSoundShoot(std::string path);
 };
 

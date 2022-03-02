@@ -25,6 +25,12 @@
     <Filter Include="Исходные файлы\Game">
       <UniqueIdentifier>{dd5eae5f-2b70-40af-806a-ce1a8e84283e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Исходные файлы\Game\Ducks">
+      <UniqueIdentifier>{def6296f-e890-43bd-a38e-6623ee92bbfa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Game\Ducks\DuckBlue">
+      <UniqueIdentifier>{3ae37821-cd3b-4948-88ad-58c2335392b4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="duckKiller.cpp">
@@ -42,6 +48,12 @@
     <ClCompile Include="Game.cpp">
       <Filter>Исходные файлы\Game</Filter>
     </ClCompile>
+    <ClCompile Include="Ducks.cpp">
+      <Filter>Исходные файлы\Game\Ducks</Filter>
+    </ClCompile>
+    <ClCompile Include="DuckBlue.cpp">
+      <Filter>Исходные файлы\Game\Ducks\DuckBlue</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Menu.h">
@@ -56,5 +68,19 @@
     <ClInclude Include="Game.h">
       <Filter>Исходные файлы\Game</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="DuckBlue.h">
+      <Filter>Исходные файлы\Game\Ducks\DuckBlue</Filter>
+    </ClInclude>
+    <ClInclude Include="Ducks.h">
+      <Filter>Исходные файлы\Game\Ducks</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="duckKiller.rc">
+      <Filter>Файлы ресурсов</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

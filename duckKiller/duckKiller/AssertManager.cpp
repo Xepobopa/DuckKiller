@@ -51,6 +51,16 @@ AssertManager::AssertManager()
 	// set sound shoot
 	this->soundShoot = new sf::Sound; soundShoot->setVolume(200.0f);
 
+	// set quack sound 
+	this->soundQuack = new sf::Sound; soundQuack->setVolume(200.0f);
+
+	// set dead duck sounds
+	this->soundDeadDuckFalls = new sf::Sound; soundDeadDuckFalls->setVolume(200.0f);
+	this->soundDeadDuckLands = new sf::Sound; soundDeadDuckFalls->setVolume(200.0f);
+
+	// set duck flapping sound
+	this->soundDuckFlapping = new sf::Sound; soundDuckFlapping->setVolume(200.f);
+
 	std::cout << "Assert Manager\n";
 }
 
@@ -124,6 +134,13 @@ sf::Sound* AssertManager::getSoundButtonClick()
 	return this->soundButtonClick;
 }
 
+sf::Sound* AssertManager::getSoundQuack()
+{
+	this->buffer->loadFromFile("sound//quack.wav");
+	this->soundQuack->setBuffer(*buffer);
+	return this->soundQuack;
+}
+
 sf::Music* AssertManager::getTitleScreenMusic()
 {
 	return this->titleScreenMusic;
@@ -134,10 +151,31 @@ sf::Music* AssertManager::getBackgroundMusic()
 	return this->backgroundMusic;
 }
 
-sf::Sound* AssertManager::getSoundShoot(std::string path)
+sf::Sound* AssertManager::getSoundShoot()
 {
-	this->buffer->loadFromFile(path);
+	this->buffer->loadFromFile("sound//gunshot.wav");
 	this->soundShoot->setBuffer(*buffer);
 	return soundShoot;
+}
+
+sf::Sound* AssertManager::getSoundDeadDuckFalls()
+{
+	this->buffer->loadFromFile("sound//dead duck falls.wav");
+	this->soundDeadDuckFalls->setBuffer(*buffer);
+	return soundDeadDuckFalls;
+}
+
+sf::Sound* AssertManager::getSoundDeadDuckLands()
+{
+	this->buffer->loadFromFile("sound//dead duck lands.wav");
+	this->soundDeadDuckLands->setBuffer(*buffer);
+	return soundDeadDuckLands;
+}
+
+sf::Sound* AssertManager::getSoundDuckFlapping()
+{
+	this->buffer->loadFromFile("sound//duck flapping.wav");
+	this->soundDuckFlapping->setBuffer(*buffer);
+	return soundDuckFlapping;
 }
 
