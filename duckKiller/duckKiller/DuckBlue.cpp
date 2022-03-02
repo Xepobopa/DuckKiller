@@ -62,8 +62,26 @@ bool DuckBlue::duckShootDown(AssertManager& manager, bool shoot)
 	return false;
 }
 
+// TODO: find pos:
+// new_pos = sf::Vector2f(rand() % 1920, rand() % 1080);
+// while (pos.x + 100 < new_pos.x _or_ pos.x - 100 < new_pos.x) // do same for Y
+// { new_pos = sf::Vector2f(rand() % 1920, rand() % 1080)}
+// return new_pos;
+
+//TODO: add new pos check
+// add sf::Vector2f pos_distination at Ducks file
+// and bool reachDestination
+// if (reachDestination) { если позиция достигнута (можно попробывать добавить саму функцию, ведь она тоже возвращает true если достигла)
+// 	reachDestination = False;
+// 	moveTo(findRandomPos());
+// else { moveTo(getPosDestination())
+
+// TODO: pos destination
+// sf::Vector2f pos_destination = nullptr
+// if (pos_destination == nullptr) { pos_destination = to; }
 bool DuckBlue::moveTo(AssertManager& manager, sf::Vector2f to, float frametime)
 {  
+	// change "to" to pos_destination
 	//std::cout << index << "\n";
 	this->length = sqrt((to.x - this->pos.x) * (to.x - this->pos.x) + (to.y - pos.y) * (to.y - pos.y));
 	//std::cout << length << std::endl;
@@ -87,7 +105,7 @@ bool DuckBlue::moveTo(AssertManager& manager, sf::Vector2f to, float frametime)
 
 		// set texture
 		if (stepX == 0 && stepY == 1) { frameY = 3; this->duck->setScale(1, 1); }
-		if (stepX == 1 && stepY == 1) { frameY = 2; this->duck->setScale(1, 1); }
+		if (stepX == 1 && stepY == 1) { frameY = 2; this->duck->setScale(  1, 1); }
 		if (stepX == 1 && stepY == 0) { frameY = 1; this->duck->setScale(1, 1); }
 		//
 		if (stepX == 1 && stepY == -1) { frameY = 2; }
@@ -104,11 +122,16 @@ bool DuckBlue::moveTo(AssertManager& manager, sf::Vector2f to, float frametime)
 		
 
 		// std::cout << "pos x :" << speed * frametime * (to.x - pos.x) / length << "       pos y: " << speed * frametime * (to.y - pos.y) / length << std::endl;
+		
+		
+		// pos destination
+	        // sf::Vector2f pos_destination = nullptr
+                // if (pos_destination == nullptr) { pos_destination = to; }}
+		
 		duck->setPosition(pos);
 		return false;
 	}
 	else { return true; }
-}
 
 sf::Vector2f DuckBlue::getRandomPosition(sf::Vector2f pos)
 {
