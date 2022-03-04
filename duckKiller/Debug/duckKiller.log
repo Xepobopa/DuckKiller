@@ -1,0 +1,4 @@
+﻿  duckKiller.cpp
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\duckKiller.cpp(16,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+C:\Users\User\Desktop\DuckKiller\duckKiller\duckKiller\duckKiller.cpp(42,12): warning C4101: pos: неиспользованная локальная переменная
+  duckKiller.vcxproj -> C:\Users\User\Desktop\DuckKiller\duckKiller\Debug\duckKiller.exe
