@@ -1,0 +1,207 @@
+#include "AssertManager.h"
+#include<assert.h>
+#include<iostream>
+
+AssertManager::AssertManager()
+{
+
+	// load ducks' textures 
+	this->textureDuckBlue = new sf::Texture; textureDuckBlue->loadFromFile("img//ducks//blue duck.png");
+	this->textureDuckDark = new sf::Texture;  textureDuckDark->loadFromFile("img//ducks//dark duck.png");
+	this->textureDuckRed = new sf::Texture; textureDuckRed->loadFromFile("img//ducks//red duck.png");
+
+	// load dog texture
+	this->textureDog = new sf::Texture; textureDog->loadFromFile("img//dog laugh.png");
+
+	// load background texture
+	this->textureBackground = new sf::Texture; textureBackground->loadFromFile("img//bg.png");
+
+	// load menu buttons
+	this->textureMenuButtons = new sf::Texture; textureMenuButtons->loadFromFile("img//menuButtons.png");
+	
+	// load menu background
+	this->textureMenuBackground = new sf::Texture; textureMenuBackground->loadFromFile("img//menubg.png");
+
+	// load aim texture
+	this->textureCursorAim = new sf::Image; textureCursorAim->loadFromFile("img//aim.png");
+
+	// load button click sound
+	this->buffer = new sf::SoundBuffer; buffer->loadFromFile("sound//buttonClick.wav");
+
+	// set button click sound 
+	this->soundButtonClick = new sf::Sound;
+	this->soundButtonClick->setBuffer(*buffer);
+	this->soundButtonClick->setVolume(70.0f);
+
+	// set title screen / menu music
+	this->titleScreenMusic = new sf::Music; titleScreenMusic->openFromFile("sound//title screen.wav");
+
+	// load texture game name
+	this->textureMenuGameName = new sf::Texture; textureMenuGameName->loadFromFile("img//menuGameName.png");
+
+	// load texture bullet counter
+	this->textureBulletCounterFull = new sf::Texture; textureBulletCounterFull->loadFromFile("img//bulletCounterFull.png");
+	this->textureBulletCounterOneBullet = new sf::Texture; textureBulletCounterOneBullet->loadFromFile("img//bulletCounterOneBullet.png");
+	this->textureBulletCounterTwoBullets = new sf::Texture; textureBulletCounterTwoBullets->loadFromFile("img//bulletCounterTwoBullets.png");
+	this->textureBulletCounterEmpty = new sf::Texture; textureBulletCounterEmpty->loadFromFile("img//bulletCounterEmpty.png");
+	
+	// set background music
+	this->backgroundMusic = new sf::Music; backgroundMusic->openFromFile("sound//audioBackground.ogg");
+
+	// set sound shoot
+	this->soundShoot = new sf::Sound; soundShoot->setVolume(200.0f);
+
+	// set quack sound 
+	this->soundQuack = new sf::Sound; soundQuack->setVolume(200.0f);
+
+	// set buffer for dead ducks sound
+	this->bufferDeadDuck = new sf::SoundBuffer;
+
+	// set dead duck sounds
+	this->soundDeadDuckFalls = new sf::Sound; soundDeadDuckFalls->setVolume(200.0f);
+	this->soundDeadDuckLands = new sf::Sound; soundDeadDuckFalls->setVolume(200.0f);
+
+	// set duck flapping sound
+	this->soundDuckFlapping = new sf::Sound; soundDuckFlapping->setVolume(200.f);
+
+	// set font 
+	this->pixelFont = new sf::Font; pixelFont->loadFromFile("font//Pixelony.ttf");
+
+	// set coin ring sound
+	this->bufferCoinRing = new sf::SoundBuffer;
+	this->soundCoin = new sf::Sound; soundCoin->setVolume(200.0f);
+
+	//set buffer for shooting
+	this->bufferShoot = new sf::SoundBuffer;
+
+
+	std::cout << "Assert Manager\n";
+}
+
+sf::Texture* AssertManager::getTextureDuckBlue()
+{
+	return this->textureDuckBlue;
+}
+
+sf::Texture* AssertManager::getTextureDuckRed()
+{
+	return this->textureDuckRed;
+}
+
+sf::Texture* AssertManager::getTextureDuckDark()
+{
+	return this->textureDuckDark;
+}
+
+sf::Texture* AssertManager::getTextureDog()
+{
+	return this->textureDog;
+}
+
+sf::Texture* AssertManager::getTextureMenuButtons()
+{
+	return this->textureMenuButtons;
+}
+
+sf::Image* AssertManager::getTextureAim()
+{
+	return this->textureCursorAim;
+}
+
+sf::Texture* AssertManager::getTextureBackground()
+{
+	return this->textureBackground;
+}
+
+sf::Texture* AssertManager::getTextureMenuBackground()
+{
+	return this->textureMenuBackground;
+}
+
+sf::Texture* AssertManager::getTextureMenuGameName()
+{
+	return this->textureMenuGameName;
+}
+
+sf::Texture* AssertManager::getTextureBulletCounterFull()
+{
+	return this->textureBulletCounterFull;
+}
+
+sf::Texture* AssertManager::getTextureBulletCounterOneBullet()
+{
+	return this->textureBulletCounterOneBullet;
+}
+
+sf::Texture* AssertManager::getTextureBulletCounterTwoBullet()
+{
+	return this->textureBulletCounterTwoBullets;
+}
+
+sf::Texture* AssertManager::getTextureBulletCounterEmpty()
+{
+	return this->textureBulletCounterEmpty;
+}
+
+sf::Sound* AssertManager::getSoundButtonClick()
+{
+	return this->soundButtonClick;
+}
+
+sf::Sound* AssertManager::getSoundQuack()
+{
+	this->buffer->loadFromFile("sound//quack.wav");
+	this->soundQuack->setBuffer(*buffer);
+	return this->soundQuack;
+}
+
+sf::Music* AssertManager::getTitleScreenMusic()
+{
+	return this->titleScreenMusic;
+}
+
+sf::Music* AssertManager::getBackgroundMusic()
+{
+	return this->backgroundMusic;
+}
+
+sf::Font* AssertManager::getTextFont()
+{
+	return this->pixelFont;
+}
+
+sf::Sound* AssertManager::getSoundShoot()
+{
+	this->bufferShoot->loadFromFile("sound//gunshot.wav");
+	this->soundShoot->setBuffer(*bufferShoot);
+	return soundShoot;
+}
+
+sf::Sound* AssertManager::getSoundDeadDuckFalls()
+{
+	this->bufferDeadDuck->loadFromFile("sound//dead duck falls.wav");
+	this->soundDeadDuckFalls->setBuffer(*bufferDeadDuck);
+	return soundDeadDuckFalls;
+}
+
+sf::Sound* AssertManager::getSoundDeadDuckLands()
+{
+	this->bufferDeadDuck->loadFromFile("sound//dead duck lands.wav");
+	this->soundDeadDuckLands->setBuffer(*bufferDeadDuck);
+	return soundDeadDuckLands;
+}
+
+sf::Sound* AssertManager::getSoundDuckFlapping()
+{
+	this->buffer->loadFromFile("sound//duck flapping.wav");
+	this->soundDuckFlapping->setBuffer(*buffer);
+	return soundDuckFlapping;
+}
+
+sf::Sound* AssertManager::getSoundCoinRing()
+{
+	this->bufferCoinRing->loadFromFile("sound//coin sound.wav");
+	this->soundCoin->setBuffer(*bufferCoinRing);
+	return soundCoin;
+}
+
